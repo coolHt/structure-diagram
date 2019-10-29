@@ -1,9 +1,28 @@
 <template>
   <div id="app">
-    hey
+    <Region :search="search" :fullrange="true" @cRegion="hellos" :selected="selected"></Region>
   </div>
 </template>
 <script>
-
+import Region from './lib/dispose';
+export default {
+  data(){
+    return {
+      search: true,
+      selected: ""
+      // selected: ["",""],
+    }
+  },
+  
+  methods:{
+    hellos(data){
+      console.log(data);
+    }
+  },
+  
+  components:{
+    Region
+  }
+}
 </script>
 
